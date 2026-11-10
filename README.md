@@ -3,6 +3,7 @@ Predicting the price of a used car from brand, year, mileage, engine, transmissi
 The final model Random Forest on a log-transformed target has a typical mean absolute error (MAE) of about $10–15k, roughly half of what a naive "always predict the median" baseline gives.
 
 Data
+
     1. Source: Used Car Price Prediction Dataset (Kaggle), license CC BY 4.0, 4,009 listings, 12 columns
     
     2. Issues found in the raw data:
@@ -18,6 +19,7 @@ Data
 
 
 Approach
+
     1. Split 80 for train set and 20 for test set, stratified by price quintiles (random_state=35)
 
     2. Cleaning (custom functions in src/preprocessing.py):
@@ -31,12 +33,14 @@ Approach
 
 
 Model's Results
+
     On train set MAE 9910.57 RMSE 28622.31
 
     On test set MAE 15002.79 RMSE 120106.62
 
 
 Limitations
+
     1. Very expensive cars are extremely rare, so the model predicts them poorly
 
     2. The test set is small (~800 rows), so it's noisy
