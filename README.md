@@ -7,15 +7,15 @@ Data
     1. Source: Used Car Price Prediction Dataset (Kaggle), license CC BY 4.0, 4,009 listings, 12 columns
     
     2. Issues found in the raw data:
-        price and milage stored as text ($21,000, 51,000 mi.)
+        price and milage stored as text (21,000$, 51,000 mi)
 
         missing values in fuel_type, accident, clean_title; disguised missing values (–, not supported)
 
         engine and transmission are free text with several characteristics packed into one string
 
-        model has ~1,650 unique values (not used), colors have ~270 / ~130 variants
+        colors have ~130 variants
 
-        price are skewed to the right (from ~$2k to ~$2M)
+        price are skewed to the right (from ~2k$ to ~2M$)
 
 
 Approach
@@ -25,7 +25,8 @@ Approach
     2. Cleaning (custom functions in src/preprocessing.py):
         milage, price converted to numbers
         fuel_type: electric and hydrogen cars recovered from the engine text, – marked as Unknown
-        accident: missing to Unknown; clean_title: binary flag
+        accident: missing to Unknown
+        clean_title: binary flag
         engine horsepower, displacement and cylinders extracted from engine text
         transmission type and gear count extracted from transmission
 
@@ -43,6 +44,4 @@ Limitations
 
     1. Very expensive cars are extremely rare, so the model predicts them poorly
 
-    2. The test set is small (~800 rows), so it's noisy
-
-    3. RMSE on the test set is therefore not representative of typical performance
+    2. The test set's small (~800 rows), so it's noisy
