@@ -1,6 +1,6 @@
 Predicting the price of a used car from brand, year, mileage, engine, transmission, etc.
 
-The final model Random Forest on a log-transformed target has a typical mean absolute error (MAE) of about $10–15k, roughly half of what a naive "always predict the median" baseline gives.
+The final model Random Forest on a log-transformed target has a typical mean absolute error (MAE) of about $10–15k
 
 Data
 
